@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-import { readFileSync, writeFileSync, readdirSync, unlinkSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, unlinkSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -9,6 +7,11 @@ const __dirname = dirname(__filename);
 const ROOT_DIR = join(__dirname, '..');
 const SYSTEM_PROMPTS_DIR = join(ROOT_DIR, 'system-prompts');
 const README_PATH = join(ROOT_DIR, 'README.md');
+
+// Ensure system-prompts directory exists
+if (!existsSync(SYSTEM_PROMPTS_DIR)) {
+  mkdirSync(SYSTEM_PROMPTS_DIR, { recursive: true });
+}
 
 // Get API key from environment
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -276,13 +279,13 @@ async function updateFromJSON(jsonPath) {
     if (existingFile) {
       // Compare content
       if (existingFile.fullContent.trim() !== newMarkdownContent.trim()) {
-        console.log(`⚠️  Changed: ${filename}`);
+        console.log(`\x1b[33mChanged: ${filename}\x1b[0m`);
         unlinkSync(filepath); // Delete old file
         writeFileSync(filepath, newMarkdownContent);
         changedPrompts.add(filename);
       }
     } else {
-      console.log(`✨ New: ${filename}`);
+      console.log(`\x1b[31mNew: ${filename}\x1b[0m`);
       writeFileSync(filepath, newMarkdownContent);
       newPrompts.add(filename);
     }
@@ -292,7 +295,7 @@ async function updateFromJSON(jsonPath) {
   }
 
   // Batch count tokens for all prompts
-  console.log('\n🔢 Counting tokens...');
+  console.log(`\x1b[34mCounting tokens for ${promptsToCount.length} prompts...\x1b[0m`);
   const tokenCounts = await countTokensBatch(promptsToCount);
 
   // Store prompt info for README updates
@@ -314,13 +317,13 @@ async function updateFromJSON(jsonPath) {
   }
 
   // Update README
-  console.log('\n📝 Updating README.md...');
+  console.log('\x1b[34mUpdating README.md...\x1b[0m');
   updateReadme(promptsByFilename, jsonData.version);
 
-  console.log('\n✅ Update complete!');
-  console.log(`   New: ${newPrompts.size}`);
-  console.log(`   Changed: ${changedPrompts.size}`);
-  console.log(`   Deleted: ${deletedFiles.length}`);
+  console.log('\x1b[32;1mUpdate complete!\x1b[0m');
+  console.log(`   New: \x1b[1m${newPrompts.size}\x1b[0m`);
+  console.log(`   Changed: \x1b[1m${changedPrompts.size}\x1b[0m`);
+  console.log(`   Deleted: \x1b[1m${deletedFiles.length}\x1b[0m`);
 }
 
 /**
