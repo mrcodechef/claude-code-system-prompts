@@ -1,6 +1,6 @@
 # Claude Code System Prompts
 
-This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.0.52](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.0.52) (November 24th, 2025).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 33 versions since v2.0.14.
+This repository contains an up-to-date list of all Claude Code's various system prompts and their associated token counts as of **[Claude Code v2.0.53](https://www.npmjs.com/package/@anthropic-ai/claude-code/v/2.0.53) (November 24th, 2025).**  It also contains a [**CHANGELOG.md**](./CHANGELOG.md) for the system prompts across 34 versions since v2.0.14.
 
 Why multiple "system prompts?"
 
