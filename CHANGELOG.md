@@ -4,6 +4,18 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# 2.0.73
+
+_+91 tokens_
+
+- **NEW:** Agent Prompt: Prompt Suggestion Generator v2 - V2 instructions for generating prompt suggestions, focusing on predicting what the user would naturally type next
+- **REMOVED:** Tool Description: SlashCommand - functionality merged into Skill tool
+- Tool Description: Skill - added guidance for invoking skills via slash command syntax (e.g., "/commit"), added `args` parameter for passing arguments to skills
+- Tool Description: LSP - added call hierarchy operations (`prepareCallHierarchy`, `incomingCalls`, `outgoingCalls`)
+- Tool Description: TeammateTool's operation parameter - added team discovery and join operations (`discoverTeams`, `requestJoin`, `approveJoin`, `rejectJoin`)
+- Main system prompt - terminology update: "slash commands" → "skills"; removed duplicate "complete tasks fully" instruction
+- Agent Prompt: Claude guide agent - terminology update: "slash commands" → "skills"
+
 # [2.0.72](https://github.com/Piebald-AI/claude-code-system-prompts/commit/f415c3a)
 
 _+47 tokens_
