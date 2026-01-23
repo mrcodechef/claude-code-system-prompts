@@ -137,7 +137,7 @@ Parts of the main system prompt.
 
 ### System Reminders
 
-Text for large system reminders.
+Text for all system reminders.
 
 - [System Reminder: Agent mention](./system-prompts/system-reminder-agent-mention.md) (**45** tks) - Notification that user wants to invoke an agent.
 - [System Reminder: Compact file reference](./system-prompts/system-reminder-compact-file-reference.md) (**57** tks) - Reference to file read before conversation summarization.
