@@ -14,8 +14,6 @@ _-1,928 tokens_
 - **NEW:** System Prompt: Tool usage policy - Policies and guidelines for tool usage
 - **NEW:** Tool Description: SendMessageTool - Tool for sending messages to teammates and handling protocol requests/responses in a swarm
 - **NEW:** Tool Description: EnterPlanMode (ambiguous tasks) - Tool for entering plan mode when task has ambiguity
-- **REMOVED:** Agent Prompt: Conversation summarization with additional instructions - Extended summarization prompt with support for custom additional instructions
-- **REMOVED:** Agent Prompt: Prompt Hook execution - Prompt given to Claude when evaluating whether to pass or fail a prompt hook
 - **REMOVED:** System Prompt: Censoring assistance with malicious activities - Guidelines for assisting with authorized security testing
 - **REMOVED:** System Reminder: Queued command (prompt) - Queued user message to address (prompt variant)
 - **REMOVED:** System Reminder: Queued command - Queued user message to address
@@ -29,6 +27,8 @@ _-1,928 tokens_
 - Tool Description: Write - Simplified by removing explicit read tool requirement from usage notes
 - Tool Description: Bash (Git commit and PR creation instructions) - Added guidance to keep PR titles short (under 70 characters) and use description/body for details
 - System Prompt: Tool execution denied - Streamlined wording
+- Agent Prompt: Conversation summarization with additional instructions - Merged into base "Conversation summarization" prompt; additional instructions now added conditionally via code rather than as separate prompt string
+- Agent Prompt: Prompt Hook execution - Shortened from 485 to 263 characters; removed verbose JSON formatting instructions
 
 
 # [2.1.19](https://github.com/Piebald-AI/claude-code-system-prompts/commit/fcf3f24)
