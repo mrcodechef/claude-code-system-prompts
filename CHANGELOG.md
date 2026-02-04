@@ -4,6 +4,24 @@ Note: Only use **NEW:** for entirely new prompt files, NOT for new additions/sec
 
 ### Claude Code System Prompts Changelog
 
+# [2.1.31](https://github.com/Piebald-AI/claude-code-system-prompts/commit/505d739)
+
+_+692 tokens_
+
+# [2.1.31](https://github.com/Piebald-AI/claude-code-system-prompts/commit/TODO)
+
+_+693 tokens_
+
+**NEW:** System Prompt: Agent memory instructions - Instructions for including domain-specific memory update guidance in agent system prompts (e.g., for code reviewers, test runners, architects)
+**NEW:** System Prompt: Censoring assistance with malicious activities - Guidelines for assisting with authorized security testing, defensive security, CTF challenges, and educational contexts while refusing malicious requests (previously removed in v2.1.20, now re-added)
+**NEW:** System Prompt: Tool permission mode - Guidance on tool permission modes and handling denied tool calls; advises not to re-attempt denied tool calls and to adjust approach instead
+**NEW:** System Reminder: Hook stopped continuation prefix - Prefix for hook stopped continuation messages
+**NEW:** Tool Description: ToolSearch extended - Extended usage instructions for ToolSearch moved to separate conditional prompt (query modes, examples, correct/incorrect usage patterns)
+**REMOVED:** Tool Description: TeammateTool operation parameter - Description of the operation parameter for the TeammateTool (removed)
+Tool Description: Task - Added conditional note about "Agent Teams" feature (TeammateTool, SendMessage, spawnTeam) not being available on certain plans; clarifies this limitation only applies when users explicitly ask for agent teams or peer-to-peer messaging
+Tool Description: ToolSearch - Refactored: moved extended content to separate `ToolSearch extended` prompt; simplified base description now references `<available-deferred-tools>` messages and conditionally includes extended content via identifier
+
+
 # [2.1.30](https://github.com/Piebald-AI/claude-code-system-prompts/commit/688d25c)
 
 _+3,152 tokens_
